@@ -12,8 +12,8 @@ on [Django REST Framework - Authentication][drf_auth]. But all of them that supp
 require access to the Identity Provider database to verify an access token. Or they cannot be
 stack up with other authentication classes to authenticate a bearer token against multiple
 Identity Providers. The Multiprovider Authentication middleware fill up the gap. It supports all
-Identity Providers that issue JWT token and [Globus][globus] that issues opaque access token. Support
-for other Identity Providers can easily be extended by adding a new backend in `mp_auth/backends`.
+Identity Providers that issue JWT tokens and [Globus][globus] that issues opaque access tokens. Support
+for other Identity Providers can easily be added by creating a new backend in `mp_auth/backends`.
 Each backend can be used separately as an Django REST Framework authentication class, or can be a part of
 list of authentication class that Django REST Framework will go through to authenticate an HTTP request.
 `mp_auth.backend.mp.MultiproviderAuthentication` is a special authentication class that calls all
@@ -55,8 +55,9 @@ MULTIPROVIDER_AUTH = {
 GLOBUS_CLIENT_ID = <OAuth2 client id>
 GLOBUS_CLIENT_SECRET = <OAuth2 client secret>
 ```
-Then any view can be protected by `JWTAuthentication` or `GlobusAuthentication`. Or `MultiproviderAuthentication`
-class if you want to authenticate an HTTP request against both `JWTAuthentication` or `GlobusAuthentication`.
+Then any view can be protected by `JWTAuthentication` or `GlobusAuthentication`, or, if you want to
+authenticate an HTTP request against both `JWTAuthentication` or `GlobusAuthentication`, by
+ `MultiproviderAuthentication` class.
 ```
 from mp_auth.backends.mp import MultiproviderAuthentication
 
