@@ -29,7 +29,7 @@ and in `settings.py` set the following:
 ```python
 INSTALLED_APPS [
     ...
-    'MP_AUTH',
+    'mp_auth',
 ]
 
 REST_FRAMEWORK = {
