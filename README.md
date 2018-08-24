@@ -9,9 +9,9 @@ or JWT access tokens, e.g. [Auth0][auth0], [Globus][globus], etc.
 Many authentication middleware packages have been writted for Django REST Framework with
 support for OAuth2 opaque or JWT token. Most popular ones are listed with a short description
 on [Django REST Framework - Authentication][drf_auth]. But all of them that support opaque tokens
-require access to the Identity Provider database to verify an access token. Or they cannot be
+require access to the Identity Provider database to verify the access tokens. Or they cannot be
 stack up with other authentication classes to authenticate a bearer token against multiple
-Identity Providers. The Multiprovider Authentication middleware fill up the gap. It supports all
+Identity Providers. The Multiprovider Authentication middleware fills up the gap. It supports all
 Identity Providers that issue JWT tokens and [Globus][globus] that issues opaque access tokens. Support
 for other Identity Providers can easily be added by creating a new backend in `mp_auth/backends`.
 Each backend can be used separately as an Django REST Framework authentication class, or can be a part of
