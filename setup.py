@@ -31,7 +31,7 @@ setup(
         "PyJWT>=1.4.0",
         "requests>=2.0.0,<3.0.0",
         "django>=2.0",
-        "django-rest-framework>=3.8.0",
+        "djangorestframework>=3.8.0",
     ],
     extras_require={
         # empty extra included to support older installs

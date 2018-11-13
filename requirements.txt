@@ -2,4 +2,4 @@ cryptography
 PyJWT
 requests
 django
-django-rest-framework
+djangorestframework
