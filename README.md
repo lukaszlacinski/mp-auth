@@ -21,7 +21,7 @@ authentication classes configured in `settings.py`.
 
 ## Setup
 
-Install the Multiprovider Authentication middleware for Django REST Framework
+Install the Multiprovider Authentication middleware for Django REST Framework (Python 3 is required)
 ```shell
 pip install git+git://github.com/lukaszlacinski/mp_auth.git
 ```
