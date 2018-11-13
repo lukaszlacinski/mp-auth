@@ -4,13 +4,14 @@ import warnings
 
 from setuptools import find_packages, setup
 
-if sys.version_info < (2, 7):
-    raise NotImplementedError(
-        """\n
-###########################################################
-# mp-auth does not support python versions older than 2.7 #
-###########################################################"""
+# warn on older/untested python3s
+# it's not disallowed, but it could be an issue for some people
+if sys.version_info < (3, 4):
+    warnings.warn(
+        "Installing mp-auth on Python version older than 3.4 "
+        "may result in degraded functionality or even errors."
     )
+
 
 # single source of truth for package version
 version_ns = {}
