@@ -49,7 +49,7 @@ class GlobusAuthentication(MultiproviderBaseAuthentication):
         try:
             content = resp.json()
         except Exception as e:
-            logger.warn("Error when introspecting a bearer token: {}".format(e))
+            logger.warning("Error when introspecting a bearer token: {}".format(e))
 
         logger.debug("Introspection response: {}".format(content))
 
@@ -111,7 +111,7 @@ class GlobusAuthentication(MultiproviderBaseAuthentication):
                     user=user, uid=sub, provider=provider)
             AccessToken.objects.create(
                 user_association=user_association, access_token=bearer_token, scope=scope, exp=exp)
-            logger.debug("New access token (Globus) {} added to the database".format(bearer_token))
+            logger.debug("New access token (Globus) {} added to the database".format(user.username))
 
         return user, None
 
